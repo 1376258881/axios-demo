@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>取消请求</title>
+</head>
+<body>
+    <button onclick="getProducts1()">获取商品列表1</button>
+    <button onclick="getProducts2()">获取商品列表2</button>
+    <button onclick="cancelReq()">取消请求</button> 
+    <script src="https://cdn.bootcss.com/axios/0.19.1/axios.js"></script>
+
+    <script>
+        function getProducts1() {
+            axios({
+            url:'http://localhost:4000/products1'
+            }).then(
+                response =>{
+                    console.log('请求1成功了',response.data)
+                }
+            )
+
+        }
+        function getProducts2() {
+            axios({
+            url:'http://localhost:4000/products2'
+            }).then(
+                response =>{
+                    console.log('请求2成功了',response.data)
+                }
+            )
+
+        }
+        function cancelReq(){
+            
+        }
+        
+    </script>
+</body>
+</html>

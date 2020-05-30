@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest API</title>
+</head>
+<body>
+    <button onclick="testGet()">GET </button>
+    <button onclick="testPost()">POST </button>
+    <button onclick="testPut()">PUT </button>
+    <button onclick="testDelete()">DELETE </button>
+    <script src="https://cdn.bootcss.com/axios/0.19.1/axios.js"></script>
+    <script>
+        axios.defaults.baseURL =  'http://localhost:3000'
+        //获取
+        function testGet(){
+            // axios.get('http://localhost:3000/posts')
+            // .then(res =>{
+            //     console.log(res)
+            // })
+            axios({
+                url:'/posts',
+                params:{
+                    'id':1
+                }
+            }).then(res =>{
+                console.log(res)
+            })
+        }
+        //添加
+        function testPost(){
+            axios.post('/posts', { "id": 2, "title": "json-server2", "author": "typicode" })
+            .then(res =>{
+                console.log(res)
+            })
+        }
+        //修改
+        function testPut(){
+            axios.put('/posts/2', { "id": 2, "title": "json-server.....", "author": "typicode" })
+            .then(res =>{
+                console.log(res)
+            })
+        }
+        //删除
+        function testDelete(){
+            axios.delete('/posts/2')
+            .then(res =>{
+                console.log(res)
+            })
+        }
+        
+    </script>
+</body>
+</html>
