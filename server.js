@@ -28,9 +28,7 @@ app.get('/products2',(req,res) =>{
         ])
     },1000 + Math.random()*2000)
 })
-//监听端口
 app.listen(4000,()=>{
     console.log('server app start on port 4000')
 })
-
-//
+////
