@@ -1,4 +1,4 @@
-﻿const express = require('express');
+const express = require('express');
 const cors = require('cors')
 const app = express();
 
@@ -31,4 +31,3 @@ app.get('/products2',(req,res) =>{
 app.listen(4000,()=>{
     console.log('server app start on port 4000')
 })
-////master
